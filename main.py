@@ -5,8 +5,10 @@ import base64
 import pyaudio
 import os
 import struct
+from dotenv import load_dotenv
 
-API_KEY = os.environ.get("GEMINI_API_KEY")
+load_dotenv()
+API_KEY = os.getenv("GEMINI_API_KEY")
 
 if not API_KEY:
     raise ValueError("A variável GEMINI_API_KEY não foi configurada!")
